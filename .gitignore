@@ -27,5 +27,5 @@ dist
 *.tmp*
 .DS_Store
 mr-developer-src
-src
-
+production.ini
+development.ini
