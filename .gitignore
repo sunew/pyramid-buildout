@@ -5,6 +5,9 @@
 *.EGG
 *.EGG-INFO
 bin
+include
+lib
+local
 build
 downloads
 develop-eggs
