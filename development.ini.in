@@ -1,4 +1,4 @@
-[app:main]
+[app:mypyramidapp]
 use = egg:testproject
 
 pyramid.reload_templates = true
@@ -15,15 +15,32 @@ pyramid.includes =
 
 buildout_dir = ${buildout:directory}
 
+[filter:translogger]
+use = egg:Paste#translogger
+setup_console_handler = False
+
+[pipeline:main]
+pipeline = translogger
+           mypyramidapp
 
 [server:main]
 use = egg:waitress#main
 host = ${hosts:local_host}
 port = ${hosts:local_port}
 
+###
+# logging configuration
+# http://docs.pylonsproject.org/projects/pyramid/en/latest/narr/logging.html
+###
 
 [loggers]
-keys = root, testproject
+keys = root, testproject, wsgi
+
+[logger_wsgi]
+level = ERROR
+handlers = console
+qualname = wsgi
+propagate = 0
 
 [handlers]
 keys = console
@@ -32,7 +49,7 @@ keys = console
 keys = generic
 
 [logger_root]
-level = INFO
+level = DEBUG
 handlers = console
 
 [logger_testproject]
