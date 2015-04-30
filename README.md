@@ -15,3 +15,6 @@ Run the application like this:
 
     ./bin/pserve development.ini
 
+or
+
+    ./bin/pserve development.ini --reload
