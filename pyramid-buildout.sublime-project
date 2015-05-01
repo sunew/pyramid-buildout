@@ -1,0 +1,33 @@
+{
+	"folders":
+	[
+        {
+            "file_exclude_patterns":
+            [
+                ".mr.developer.cfg",
+                ".installed.cfg",
+                "buildout.log",
+                "intbar.sublime-project",
+                "run-buildout.sh"
+            ],
+            "folder_exclude_patterns":
+            [
+                ".yolk",
+                "develop-eggs",
+                "bin",
+                "eggs",
+                "parts",
+                "var",
+                "local",
+                "lib",
+                "include"
+            ],
+            "follow_symlinks": true,
+            "path": "."
+        },
+        {
+            "follow_symlinks": true,
+            "path": "parts/omelette"
+        },
+	]
+}
