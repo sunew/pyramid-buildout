@@ -32,3 +32,8 @@ dist
 mr-developer-src
 production.ini
 development.ini
+diazo.ini
+*.sublime-workspace
+.ipython
+node_modules
+.sass-cache
