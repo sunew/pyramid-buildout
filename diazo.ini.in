@@ -1,8 +1,8 @@
 [server:main]
 use = egg:Paste#http
 host = 0.0.0.0
-port = 5000
- 
+port = ${hosts:diazo_port}
+
 [composite:main]
 use = egg:Paste#urlmap
 /static = static
@@ -24,13 +24,13 @@ pipeline = theme
 
 [filter:theme]
 use = egg:diazo
-rules = %(here)s/rules-plone.xml
+rules = %(here)s/theme/rules.xml
 prefix = /static
 debug = false
 
 # Proxy http://diazo.org as the content
 [app:content]
 use = egg:Paste#proxy
-address =  http://localhost:8080/VirtualHostBase/http/fandango:5000/site/VirtualHostRoot/
+address = http://${hosts:local_host}:${hosts:local_port}
 #http://localhost:8080/site
 suppress_http_headers = accept-encoding
