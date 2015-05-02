@@ -11,10 +11,15 @@ Install it like this:
     ./bin/buildout
 
 
-Run the application like this:
+Run the pyramid application like this:
 
     ./bin/pserve development.ini
 
 or
 
     ./bin/pserve development.ini --reload
+
+
+Run diazo in front of the pyramid application like this:
+
+    bin/paster serve --reload diazo.ini
