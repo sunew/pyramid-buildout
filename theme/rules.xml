@@ -9,4 +9,11 @@
     <theme href="index.html"/>
     <notheme if-path="/_debug_toolbar "/>
 
+    <rules>
+        <replace theme='/html/head/title' content='/html/head/title' />
+        <replace css:theme="#body" css:content="#middle" />
+    </rules>
+
+
+
 </rules>
